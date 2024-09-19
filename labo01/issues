@@ -1,0 +1,6 @@
+SOLVED
+------
+BUG01           error:cannot find module 'readline-sync'
+Description     referencing the readline-sync module after module install throws an error
+Resolution      install module without the '-g' option
+                npm install readline-sync

@@ -6,7 +6,7 @@
 //
 // labo 1 demo readline-sync
 
-import * as readline from "readline-sync" //BUG01 error:cannot find module 'readline-sync'
+import * as readline from "readline-sync"
 
 let name : string = readline.question("Wat is je naam?");
 console.log("Hallo " + name);
