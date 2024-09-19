@@ -6,7 +6,6 @@
 //
 // labo 1 demo
 
-let helloworld: string;
-helloworld = "Hello world"
+const helloworld: string = "Hello world"
 
 console.log(helloworld);
