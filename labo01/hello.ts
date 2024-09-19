@@ -6,4 +6,7 @@
 //
 // labo 1 demo
 
-console.log("Hello world");
+let helloworld: string;
+helloworld = "Hello world"
+
+console.log(helloworld);
