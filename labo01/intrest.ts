@@ -8,8 +8,8 @@
 
 import * as readline from "readline-sync"
 
-let kapitaal : readline.quest("Geef het bedrag in ");
-let intrest  : readline.questionFloat("Geef het intrest percentage in ");
+let kapitaal = readline.questionFloat("Geef het bedrag in ");
+let intrest  = readline.questionFloat("Geef het intrest percentage in ");
 
 let jaar1 : number = kapitaal + (kapitaal * (intrest / 100));
 let jaar2 : number = jaar1 + (jaar1 * (intrest / 100));
