@@ -9,12 +9,17 @@
 import * as readline from "readline-sync";
 
 let prompt: string = "Geef het email adres in: ";
-let question: string = "Wil je nog een email adres ingeven? (y/n) ";
+let question: string = "Wil je nog een email adres ingeven? ";
+let goodbye: string = "Nog een goede dag!";
 
-let email = readline.question(prompt);
-let name: string = email.substring(0, 10);
-let firstname: string = name[0].toUpperCase();
-let lastname: string = "";
+do {
+    let email = readline.question(prompt);
+    let name: string = email.substring(0, (email.search("@")));
+    let firstname: string = name[0].toUpperCase();
+    let lastname: string = name.substring((name.search("\\."))+1);
 
-let message: string = `De naam is ${firstname}. ${lastname}`;
-console.log(message);
+    let message: string = `De naam is ${firstname}. ${lastname}`;
+    console.log(message);
+} while(readline.keyInYNStrict(question) == true)
+
+console.log(goodbye)
