@@ -21,13 +21,37 @@
    * Als je STOP hebt ingegeven dan wordt het team van de gebruiker op het scherm getoond
 
    ### WERKWIJZE ###
-   1 lijst pokemon opbouwen
-   2 pokemon lijst tonen aan gebruiker (dmv lus)
-   3 vraag invoer om team aan te vullen
-   4 team aanvullen
+   1x lijst pokemon opbouwen
+   2  pokemon lijst tonen aan gebruiker (dmv lus)
+   3  vraag invoer om team aan te vullen
+   4  team aanvullen
      uitzonderingen
-     a pokemon al in het team
-     b pokemon niet bekend
-     c gebruik voert STOP in
+     a  pokemon al in het team
+     b  pokemon niet bekend
+     c  gebruik voert STOP in
 
 */
+
+let pokemon: string[] = [
+    "Bulbasaur",
+    "Ivysaur",
+    "Venusaur",
+    "Charmander",
+    "Charmeleon",
+    "Charizard",
+    "Squirtle",
+    "Wartortle",
+    "Blastoise",
+    "Caterpie",
+    "Metapod",
+    "Butterfree",
+    "Weedle",
+    "Kakuna",
+    "Beedrill",
+    "Pidgey",
+    "Pidgeotto",
+    "Pidgeot",
+    "Rattata",
+    "Raticate",
+    "Spearow",
+];
