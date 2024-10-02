@@ -31,9 +31,19 @@
      a  pokemon al in het team (Deze pokemon zit al in je team)
      b  pokemon niet bekend (Deze pokemon ken ik niet)
      c  gebruiker voert STOP in (toon team)
-        --Jouw team van pokemon is:
+        --Jouw team van pokemon is: werk
 
 */
+
+function toonPokemon(lijst: string[]): string {
+    let lijst_van_pokemon: string = "";
+
+    for(let index: number = 0; index < lijst.length; index++) {
+        lijst_van_pokemon += (`${index}. ${lijst[index]}\n`);
+    }
+
+    return lijst_van_pokemon;
+}
 
 let pokemon: string[] = [
     "Bulbasaur",
@@ -59,6 +69,4 @@ let pokemon: string[] = [
     "Spearow",
 ];
 
-for(let index: number = 0; index < pokemon.length; index++) {
-    console.log(`${index}. ${pokemon[index]}`);
-}
+console.log(toonPokemon(pokemon));
