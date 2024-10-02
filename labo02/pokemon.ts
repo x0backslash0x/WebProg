@@ -22,7 +22,7 @@
 
    ### WERKWIJZE ###
    1x lijst pokemon opbouwen
-   2  pokemon lijst tonen aan gebruiker (dmv lus)
+   2x pokemon lijst tonen aan gebruiker (dmv lus)
    3  vraag invoer om team aan te vullen
    4  team aanvullen
      uitzonderingen
@@ -55,3 +55,7 @@ let pokemon: string[] = [
     "Raticate",
     "Spearow",
 ];
+
+for(let index: number = 0; index < pokemon.length; index++) {
+    console.log(`${index}. ${pokemon[index]}`);
+}
