@@ -17,16 +17,25 @@
 import * as readline from "readline-sync";
 
 let i: number = 1;
-let punten: any[] = [];
-let punt: any;
+let punten: number[] = [];
+let punt: string;
+
+function filterOnvoldoende(p: number) {
+   if(p < 10) {
+      return p;
+   }
+}
 
 do {
    punt = readline.question(`Geef de punten van student ${i} in: `,);
-   punten.push(punt);
+   punten.push(Number(punt));
 
    i++;
 } while(punt != "")
 
+punten.pop();
+
 const totaal = punten.reduce((accumulator: number, current: number) => {return accumulator + current;});
-//const onvoldoende: number[] = punten.filter((p: number) => {if(p < 10) {return }});
+const onvoldoende: number[] = punten.filter(filterOnvoldoende);
 console.log(`Het gemiddelde van de punten is ${totaal / punten.length}`);
+console.log(`Er zijn ${onvoldoende.length} onvoldoendes`);
