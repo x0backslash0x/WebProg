@@ -25,7 +25,7 @@
    ### WERKWIJZE ###
    1x lijst pokemon opbouwen
    2x pokemon lijst tonen aan gebruiker (dmv lus)
-   3  vraag invoer om team aan te vullen
+   3x vraag invoer om team aan te vullen
    4  team aanvullen
      uitzonderingen
      a  pokemon al in het team (Deze pokemon zit al in je team)
@@ -34,6 +34,7 @@
         --Jouw team van pokemon is: werk
 
 */
+import * as readline from "readline-sync";
 
 function toonPokemon(lijst: string[]): string {
     let lijst_van_pokemon: string = "";
@@ -70,3 +71,4 @@ let pokemon: string[] = [
 ];
 
 console.log(toonPokemon(pokemon));
+let teamlid = readline.question("Welke pokemon wil je in je team? [0-20]: ")
