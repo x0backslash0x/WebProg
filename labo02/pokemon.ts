@@ -26,7 +26,7 @@
    1x lijst pokemon opbouwen
    2x pokemon lijst tonen aan gebruiker (dmv lus)
    3x vraag invoer om team aan te vullen
-   4  team aanvullen
+   4x team aanvullen
      uitzonderingen
      a  pokemon al in het team (Deze pokemon zit al in je team)
      b  pokemon niet bekend (Deze pokemon ken ik niet)
@@ -36,14 +36,21 @@
 */
 import * as readline from "readline-sync";
 
+const bericht_team: string = "Jouw team van pokemon is:"
+
 function toonPokemon(lijst: string[]): string {
     let lijst_van_pokemon: string = "";
 
     for(let index: number = 0; index < lijst.length; index++) {
-        lijst_van_pokemon += (`${index}. ${lijst[index]}\n`);
+        lijst_van_pokemon += (`${index+1}. ${lijst[index]}\n`);
     }
 
     return lijst_van_pokemon;
+}
+
+let team: string[] = [];
+function teamAanvullen(teamlid: number) {
+    team.push(pokemon[teamlid]);
 }
 
 let pokemon: string[] = [
@@ -71,4 +78,8 @@ let pokemon: string[] = [
 ];
 
 console.log(toonPokemon(pokemon));
-let teamlid = readline.question("Welke pokemon wil je in je team? [0-20]: ")
+
+let nieuw_lid = readline.questionInt("Welke pokemon wil je in je team? [0-20]: ");
+teamAanvullen(nieuw_lid);
+console.log(bericht_team);
+console.log(toonPokemon(team));
