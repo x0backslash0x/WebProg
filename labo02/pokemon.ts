@@ -79,7 +79,14 @@ let pokemon: string[] = [
 
 console.log(toonPokemon(pokemon));
 
-let nieuw_lid = readline.questionInt("Welke pokemon wil je in je team? [0-20]: ");
-teamAanvullen(nieuw_lid);
+let nieuw_lid: string = "";
+do {
+    nieuw_lid = readline.question("Welke pokemon wil je in je team? [0-20]: ");
+
+    if(nieuw_lid != "STOP") {
+        teamAanvullen(Number(nieuw_lid));
+    }
+} while(nieuw_lid != "STOP")
+
 console.log(bericht_team);
 console.log(toonPokemon(team));
