@@ -54,5 +54,5 @@ for (let ingredient of lasagne.ingredienten) {
     console.log(`- ${ingredient.naam} ${ingredient.hoeveelheid}}`)
     totaleprijs += ingredient.prijs;
 }
-console.log('Totale kostprijs: ' + totaleprijs);
-//console.log('Totale kostprijs: ' + lasagne.ingredienten.reduce((acc: number, curr: Ingredient) => {return acc + curr.prijs});
+//console.log('Totale kostprijs: ' + totaleprijs);
+console.log('Totale kostprijs: ' + lasagne.ingredienten.reduce((acc: number, curr: Ingredient) => {return acc + curr.prijs}, 0));
