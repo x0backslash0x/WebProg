@@ -28,9 +28,9 @@
    3x vraag invoer om team aan te vullen
    4x team aanvullen
      uitzonderingen
-     a  pokemon al in het team (Deze pokemon zit al in je team)
-     b  pokemon niet bekend (Deze pokemon ken ik niet)
-     c  gebruiker voert STOP in (toon team)
+     ax pokemon al in het team (Deze pokemon zit al in je team)
+     bx pokemon niet bekend (Deze pokemon ken ik niet)
+     cx gebruiker voert STOP in (toon team)
         --Jouw team van pokemon is: werk
 
 */
@@ -49,8 +49,14 @@ function toonPokemon(lijst: string[]): string {
 }
 
 let team: string[] = [];
-function teamAanvullen(teamlid: number) {
-    team.push(pokemon[teamlid]);
+function teamAanvullen(teamlid: number): number | undefined {
+  if(!pokemon.includes(pokemon[teamlid])) { // pokemon niet bekend (1)
+    return 1;
+  } else if(team.includes(pokemon[teamlid])) { // pokemon al in het team (2)
+    return 2;
+  }
+
+  team.push(pokemon[teamlid]);
 }
 
 let pokemon: string[] = [
@@ -84,7 +90,12 @@ do {
     nieuw_lid = readline.question("Welke pokemon wil je in je team? [0-20]: ");
 
     if(nieuw_lid != "STOP") {
-        teamAanvullen(Number(nieuw_lid));
+        let result: number | undefined = teamAanvullen(Number(nieuw_lid));
+        if(result == 1) {
+          console.log("pokemon is niet bekend");
+        } else if(result == 2) {
+          console.log("pokemon al in het team");
+        }
     }
 } while(nieuw_lid != "STOP")
 
