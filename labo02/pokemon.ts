@@ -49,14 +49,15 @@ function toonPokemon(lijst: string[]): string {
 }
 
 let team: string[] = [];
-function teamAanvullen(teamlid: number): number | undefined {
-  if(!pokemon.includes(pokemon[teamlid])) { // pokemon niet bekend (1)
+function teamAanvullen(teamlid_id: number): number | undefined {
+  let nieuw_lid = pokemon[teamlid_id];
+  if(!pokemon.includes(nieuw_lid)) { // pokemon niet bekend (1)
     return 1;
-  } else if(team.includes(pokemon[teamlid])) { // pokemon al in het team (2)
+  } else if(team.includes(nieuw_lid)) { // pokemon al in het team (2)
     return 2;
   }
 
-  team.push(pokemon[teamlid]);
+  team.push(nieuw_lid);
 }
 
 let pokemon: string[] = [
