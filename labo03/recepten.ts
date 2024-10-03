@@ -38,9 +38,21 @@ let ingredient3: Ingredient = {
     prijs: 3
 }
 
-let recept: Recepten = {
+let lasagne: Recepten = {
     naam: 'Lasagne',
     beschrijving: 'Lekker lasagne',
     personen: 4,
     ingredienten: [ingredient1, ingredient2, ingredient3]
 }
+
+console.log('Recept: ' + lasagne.naam);
+console.log('Beschrijvng: ' + lasagne.beschrijving);
+console.log('Personen: ' + lasagne.personen);
+console.log('Ingredienten:');
+let totaleprijs: number = 0;
+for (let ingredient of lasagne.ingredienten) {
+    console.log(`- ${ingredient.naam} ${ingredient.hoeveelheid}}`)
+    totaleprijs += ingredient.prijs;
+}
+console.log('Totale kostprijs: ' + totaleprijs);
+//console.log('Totale kostprijs: ' + lasagne.ingredienten.reduce((acc: number, curr: Ingredient) => {return acc + curr.prijs});
