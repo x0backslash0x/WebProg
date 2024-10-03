@@ -25,8 +25,8 @@ class Auto {
     #naam: string;
     #brandstof: Brandstof;
 
-    constructor(name: string, brandstof: Brandstof) {
-        this.#naam = name;
+    constructor(naam: string, brandstof: Brandstof) {
+        this.#naam = naam;
         this.#brandstof = brandstof;
     }
 }
@@ -35,11 +35,8 @@ class Fiets {
     #naam: string;
     #brandstof: Brandstof;
 
-    constructor(name: string, brandstof: Brandstof) {
-        this.#naam = name;
+    constructor(naam: string, brandstof: Brandstof) {
+        this.#naam = naam;
         this.#brandstof = brandstof;
     }
 }
-
-let auto = new Auto('auto', 'BENZINE');
-let fiets = new Fiets('fiets', 'GEEN');
