@@ -8,7 +8,7 @@
 
    ### WERKWIJZE ###
    1x interface
-   2  classes - 1 testinstantie elks
+   2x classes - 1 testinstantie elks
    3  rijden() method
    4  bijkomende instanties
 */
@@ -20,3 +20,26 @@ interface Voertuig {
     brandstof: Brandstof;
     rijden();
 }
+
+class Auto {
+    #naam: string;
+    #brandstof: Brandstof;
+
+    constructor(name: string, brandstof: Brandstof) {
+        this.#naam = name;
+        this.#brandstof = brandstof;
+    }
+}
+
+class Fiets {
+    #naam: string;
+    #brandstof: Brandstof;
+
+    constructor(name: string, brandstof: Brandstof) {
+        this.#naam = name;
+        this.#brandstof = brandstof;
+    }
+}
+
+let auto = new Auto('auto', 'BENZINE');
+let fiets = new Fiets('fiets', 'GEEN');
