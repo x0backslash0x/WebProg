@@ -40,3 +40,10 @@ class Fiets {
         this.#brandstof = brandstof;
     }
 }
+
+let auto: Auto = new Auto('auto', 'BENZINE');
+let fiets: Fiets = new Fiets("fiets", "GEEN")
+
+// fout: property 'naam' bestaat niet  op type Auto
+console.log(auto.naam + 'rijd op de weg met ' + auto.brandstof + ' als brandstof');
+console.log(fiets.naam + 'rijdt op het fietspad met ' + fiets.brandstof + ' als brandstof');
