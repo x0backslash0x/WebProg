@@ -55,4 +55,6 @@ for (let ingredient of lasagne.ingredienten) {
     totaleprijs += ingredient.prijs;
 }
 //console.log('Totale kostprijs: ' + totaleprijs);
+// indien je met classes/objecten werk is een bijkomende parameter nodig voor de reduce() method
+// beginwaarde/type meegeven aan accumulator omdat die anders het type van het object (waar curr naar verwijst) overneemt
 console.log('Totale kostprijs: ' + lasagne.ingredienten.reduce((acc: number, curr: Ingredient) => {return acc + curr.prijs}, 0));
