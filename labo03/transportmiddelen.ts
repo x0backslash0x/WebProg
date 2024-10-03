@@ -7,9 +7,16 @@
    labo 3 oefening 2
 
    ### WERKWIJZE ###
-   1  interfaces
+   1x interface
    2  classes - 1 testinstantie elks
    3  rijden() method
    4  bijkomende instanties
 */
 
+type Brandstof  = "BENZINE" | "ELECTRISCH" | "GEEN";
+
+interface Voertuig {
+    naam: string;
+    brandstof: Brandstof;
+    rijden();
+}
