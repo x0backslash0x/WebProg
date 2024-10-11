@@ -51,7 +51,7 @@ function toonPokemon(lijst: string[]): string {
 let team: string[] = [];
 function teamAanvullen(teamlid_id: number): number | undefined {
   let nieuw_lid = pokemon[teamlid_id];
-  if(!pokemon.includes(nieuw_lid)) { // pokemon niet bekend (1)
+  if(!pokemon.includes(nieuw_lid) || nieuw_lid == "") { // pokemon niet bekend (1)
     return 1;
   } else if(team.includes(nieuw_lid)) { // pokemon al in het team (2)
     return 2;
@@ -61,6 +61,7 @@ function teamAanvullen(teamlid_id: number): number | undefined {
 }
 
 let pokemon: string[] = [
+    "", // voor wanneer de gebruiker 0 als invoer geeft"
     "Bulbasaur",
     "Ivysaur",
     "Venusaur",
