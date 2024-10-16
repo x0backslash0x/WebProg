@@ -24,3 +24,5 @@ const slowMult = (a: number, b: number) => {
         },1500) // 1.5 second delay
     });
 }
+
+console.log(slowSum(1, 5)); // Does not display the sum as expected
