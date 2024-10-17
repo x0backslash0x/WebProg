@@ -45,3 +45,7 @@ console.log(slowSum(1, 5));
 // Expected output: 12 [product of (sum of 1 & 5) & 2]
 // Actual output: Promise { <pending>}'
 slowSum(1, 5).then((result: number) => {console.log(slowMult(result, 2))});
+
+// Expected output: 2 [division of 6 & 3]
+// Actual output: Promise { <pending>}'
+console.log(slowDiv(6,3));
