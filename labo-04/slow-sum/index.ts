@@ -25,4 +25,6 @@ const slowMult = (a: number, b: number) => {
     });
 }
 
-console.log(slowSum(1, 5)); // Does not display the sum as expected
+// I expect slowSum to return the sum of 1 & 5
+// It only returns 'Promise { <pending>}' after a certain timeout
+console.log(slowSum(1, 5));
