@@ -25,6 +25,19 @@ const slowMult = (a: number, b: number) => {
     });
 }
 
+// return the division of two numbers after a certain timout
+const slowDiv = (a: number, b: number) => {
+    return new Promise<number>((resolve, reject) => {
+        setTimeout(() => {
+            if(a == 0) {
+                reject(new Error("Division by zero is an illegal operation"))
+            } else {
+                resolve(a/b);
+            }
+        },2000) // 2 second delay
+    });
+}
+
 // Expected output: 6 [sum of 1 & 5]
 // Actual output: Promise { <pending>}
 console.log(slowSum(1, 5));
