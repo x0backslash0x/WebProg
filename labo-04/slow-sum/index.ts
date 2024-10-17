@@ -38,20 +38,8 @@ const slowDiv = (a: number, b: number) => {
     });
 }
 
-// Expected output: 6 [sum of 1 & 5]
-// Actual output: Promise { <pending>}
-//console.log(slowSum(1, 5));
-
-// Expected output: 12 [product of (sum of 1 & 5) & 2]
-// Actual output: Promise { <pending>}'
-//slowSum(1, 5).then((result: number) => {console.log(slowMult(result, 2))});
-
-// Expected output: 2 [division of 6 & 3]
-// Actual output: Promise { <pending>}'
-//console.log(slowDiv(6,3));
-
-// Expected output: error
-// Actual output: Division by zero is an illegal operation
+//** De voorbeeldinteractie geef als volgorder: deling door nul, 6, 2, 12 **/
+// Division by zero
 slowDiv(0,6)
     .then((result: number) => {
         console.log(result);
@@ -59,3 +47,19 @@ slowDiv(0,6)
     .catch((error: Error) => {
         console.log(error.message);
     });
+
+// sum of 1 & 5
+slowSum(1, 5).then((result: number) => console.log(result));
+
+// division of 6 & 3
+slowDiv(6,3).then((result: number) => {console.log(result);});
+
+// product of (sum of 1 & 5) & 2
+slowSum(1, 5)
+    .then((result: number) => {
+        slowMult(result, 2)
+        .then((result: number) => {
+            console.log(result)
+        })
+    }
+);
