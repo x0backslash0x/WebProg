@@ -40,12 +40,22 @@ const slowDiv = (a: number, b: number) => {
 
 // Expected output: 6 [sum of 1 & 5]
 // Actual output: Promise { <pending>}
-console.log(slowSum(1, 5));
+//console.log(slowSum(1, 5));
 
 // Expected output: 12 [product of (sum of 1 & 5) & 2]
 // Actual output: Promise { <pending>}'
-slowSum(1, 5).then((result: number) => {console.log(slowMult(result, 2))});
+//slowSum(1, 5).then((result: number) => {console.log(slowMult(result, 2))});
 
 // Expected output: 2 [division of 6 & 3]
 // Actual output: Promise { <pending>}'
-console.log(slowDiv(6,3));
+//console.log(slowDiv(6,3));
+
+// Expected output: error
+// Actual output: Division by zero is an illegal operation
+slowDiv(0,6)
+    .then((result: number) => {
+        console.log(result);
+    })
+    .catch((error: Error) => {
+        console.log(error.message);
+    });
