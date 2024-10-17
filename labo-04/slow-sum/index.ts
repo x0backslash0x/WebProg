@@ -39,12 +39,16 @@ const slowDiv = (a: number, b: number) => {
 }
 
 // Expected output: 6 [sum of 1 & 5]
-// Actual output: Promise { <pending>}
-//console.log(slowSum(1, 5));
+// Actual output: 6
+slowSum(1, 5).then((result: number) => console.log(result));
 
 // Expected output: 12 [product of (sum of 1 & 5) & 2]
-// Actual output: Promise { <pending>}'
-//slowSum(1, 5).then((result: number) => {console.log(slowMult(result, 2))});
+// Actual output: 12
+slowSum(1, 5).then((result: number) => {
+    slowMult(result, 2).then((result: number) => {
+        console.log(result)
+    })
+});
 
 // Expected output: 2 [division of 6 & 3]
 // Actual output: Promise { <pending>}'
