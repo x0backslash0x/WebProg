@@ -28,3 +28,7 @@ const slowMult = (a: number, b: number) => {
 // Expected output: 6 [sum of 1 & 5]
 // Actual output: Promise { <pending>}
 console.log(slowSum(1, 5));
+
+// Expected output: 12 [product of (sum of 1 & 5) & 2]
+// Actual output: Promise { <pending>}'
+slowSum(1, 5).then((result: number) => {console.log(slowMult(result, 2))});
