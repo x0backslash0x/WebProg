@@ -25,6 +25,6 @@ const slowMult = (a: number, b: number) => {
     });
 }
 
-// I expect slowSum to return the sum of 1 & 5
-// It only returns 'Promise { <pending>}' after a certain timeout
+// Expected output: 6 [sum of 1 & 5]
+// Actual output: Promise { <pending>}
 console.log(slowSum(1, 5));
