@@ -43,6 +43,20 @@ multiply(2, 2).then((result) => {
     console.log(result);
 });
 
+//** Promise all**/
+const delay = (delay: number): Promise<void> => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve();
+        }, delay);
+    });
+}
+
+(async() => {
+    await Promise.all([delay(1000), delay(10000), delay(15000)])
+    console.log("Done!");
+})();
+
 /// CATCH ///
 //** Promise functie met een reject **/
 function multiply2(number1: number, number2: number): Promise<number> {
