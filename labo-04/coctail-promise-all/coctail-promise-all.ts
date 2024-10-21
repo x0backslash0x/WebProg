@@ -14,3 +14,12 @@
 //
 // URL van de coctail API
 // https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11000
+
+/* momenteel geeft de functie de volledige json terug. Ik heb enkel de naam nodig (drinks: strDrink) */
+async function fetchCoctail(id: number): Promise<void> {
+    const response: Response = await fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id);
+    const text: string = await response.json();
+    console.log(text);
+}
+
+fetchCoctail(11000);
