@@ -7,8 +7,10 @@
 // labo 6 oefening 2 cowsay module
 // dit bestand voerd de module uit
 
-//import * as readline from `readline-sync`; //werkt nog niet
+import * as readline from "readline-sync";
 import cowsay from "./node_modules/cowsay";
+
+const message: string = readline.question("wat zegt de koe? ");
 
 function say(message: string) {
     if(message == "Meow!") {
@@ -22,7 +24,7 @@ function say(message: string) {
     console.log(result);
 }
 
-say("Meow!");
+say(message);
 /* try {
     say("Meow!");
 }
