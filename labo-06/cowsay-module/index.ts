@@ -7,6 +7,7 @@
 // labo 6 oefening 2 cowsay module
 // dit bestand voerd de module uit
 
+//import * as readline from `readline-sync`; //werkt nog niet
 import cowsay from "./node_modules/cowsay";
 
 function say(message: string) {
