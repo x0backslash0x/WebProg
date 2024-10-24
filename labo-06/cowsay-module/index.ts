@@ -24,10 +24,9 @@ function say(message: string) {
     console.log(result);
 }
 
-say(message);
-/* try {
+try {
     say("Meow!");
 }
-catch(error: Error) {
-    console.log(error.message);
-} */
+catch(error) {
+    console.log(error);
+}
