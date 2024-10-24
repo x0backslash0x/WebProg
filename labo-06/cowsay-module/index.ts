@@ -22,3 +22,9 @@ function say(message: string) {
 }
 
 say("Meow!");
+/* try {
+    say("Meow!");
+}
+catch(error: Error) {
+    console.log(error.message);
+} */
