@@ -21,3 +21,18 @@
  * 4. Zorg ervoor dat elke sequentie van Meow's een willekeurig leesteken krijgt aan het einde (?,! en .).
  * 5. Zorg ervoor dat de gebruiker de applicatie kan afsluiten door "bye" in te geven. De kat zal nog een laatste keer een aantal "Meow"'s teruggeven
  */
+
+import * as readline from "readline-sync";
+
+let input: string = readline.question("> ");
+
+function repeatWords(word: string, times: number, delimiter: string): void {
+    let message: string = "";
+    for(let i: number = 0; i < times; i++) {
+        message += (word + delimiter);
+    }
+
+    console.log(message + word + "?"); //moet random ?, ! of . zijn
+}
+
+repeatWords("Meow", 6, " ");
