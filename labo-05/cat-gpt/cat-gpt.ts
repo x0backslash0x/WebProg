@@ -22,17 +22,25 @@
  * 5. Zorg ervoor dat de gebruiker de applicatie kan afsluiten door "bye" in te geven. De kat zal nog een laatste keer een aantal "Meow"'s teruggeven
  */
 
+import { randomInt } from "crypto";
 import * as readline from "readline-sync";
+const slothLog = require('sloth-log');
+const endings: string = "?!.";
+let ending: string;
 
-let input: string = readline.question("> ");
-
-function repeatWords(word: string, times: number, delimiter: string): void {
+/* herhaalt een woord een opgegeven aantal keren, gescheiden door een opgegeven teken en geeft dit terug als resultaat */
+function repeatWords(word: string, times: number, delimiter: string): string {
     let message: string = "";
     for(let i: number = 0; i < times; i++) {
         message += (word + delimiter);
     }
 
-    console.log(message + word + "?"); //moet random ?, ! of . zijn
+    return message+word;
 }
 
-repeatWords("Meow", 6, " ");
+let input: string;
+do {
+    input = readline.question("> ");
+    ending = endings[randomInt(3)]; //neemt willekeurig ?, ! of .
+    slothLog.log(repeatWords("Meow", randomInt(8), " ") + ending);
+} while (input != "bye");
