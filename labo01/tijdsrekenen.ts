@@ -8,16 +8,9 @@
 
 import * as readline from "readline-sync";
 
-let minuten = readline.questionInt("Geef het aantal minuten in ");
-let aantal_minuten: number = 0;
-let aantal_uren: number = 0;
+const input: number = readline.questionInt("Geef het aantal minuten in ");
 
-if(minuten > 60) {
-    aantal_uren = Math.floor(minuten / 60);
-    aantal_minuten = minuten - (aantal_uren * 60);
-} else {
-    aantal_minuten = minuten;
-}
+let uren: number = Math.floor(input / 60);
+let minuten: number = input - (uren * 60);
 
-let message: string = `Dit is ${aantal_uren} uur en ${aantal_minuten} minuten`;
-console.log(message);
+console.log(`Dit is ${uren} uur en ${minuten} minuten`);
