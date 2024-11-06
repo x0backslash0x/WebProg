@@ -8,24 +8,21 @@
 
 import * as readline from "readline-sync";
 
-let prompt: string = "Geef de tekst in: ";
-let goodbye: string = "Tot ziens!";
-let message;
-const corner: string = "+";
-const spacer: string = "-";
-const edge: string = "|";
-let border: string;
+let input: string = "";
 
 do {
-    message = readline.question(prompt);
-    if(message == "") {break};
-    
-    border = corner;
-    for(let index:number = 0; index < (message.length)+2; index++) {border = border + spacer}
-    border = border + corner;
+    input = readline.question("Geef de tekst in: ")
+    if(input == "") {break;}
 
-    console.log(border);
-    console.log(edge + ' ' + message + ' ' + edge);
-    console.log(border);
-} while(message != "")
-console.log(goodbye);
+    input = "| " + input + " |";
+    
+    let line: string = "";
+    for(let i = 0; i < input.length - 2; i++) {line += "-"}
+    line = "+" + line + "+";
+
+    console.log(line);
+    console.log(input);
+    console.log(line);
+} while(input != "")
+
+console.log("Tot ziens!")
