@@ -64,6 +64,7 @@ class boeken implements Boek {
     
 }
 
+let bibliotheek: boeken[] = [];
 //let boekNaamInput: string = readline.question("Wat is de naam van het boek? ");
 //let boekAuteurInput: string = readline.question("Wat is de auteur van het boek? ");
 //let boekSoortInput: string = readline.question("Wat is de soort van het boek? (ROMANCE | SCIENCE FICTION | DETECTIVE) ");
@@ -75,5 +76,5 @@ class boeken implements Boek {
     console.log("verkeerde soort");
 } */
 
-let boek1: boeken = new boeken("mijn boek", "mezelf", "DETECTIVE");
-console.log(`Titel: ${boek1.naam}, \nAuteur: ${boek1.autheur}, \nSoort: ${boek1.soort}`);
+bibliotheek.push(new boeken("mijn boek", "mezelf", "DETECTIVE"));
+console.log(`Titel: ${bibliotheek[0].naam}, \nAuteur: ${bibliotheek[0].autheur}, \nSoort: ${bibliotheek[0].soort}`);
