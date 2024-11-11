@@ -1,0 +1,11 @@
+We maken een virtuele bibliotheek.
+
+In de bibliotheek staan boeken. Maak hiervoor een class 'Boek' aan. Zorg ervoor dat deze class een module is.
+De class boek heeft een naam, auteur en soort. De velden naam en auteur zijn strings,  soort is één van "ROMANCE" , "SCIENCE FICTION", "DETECTIVE". Gebruik voor dit veld een eigen 'type'.
+Alle velden zijn verplicht bij aanmaak van het boek. Zet de velden private en voorzie get en set voor elk veld.
+
+Zorg er nu voor in je index.ts dat je van de gebruiker de input krijgt om boeken aan te maken.
+Je bewaart elk aangemaakt boek in een array.
+Zolang de gebruiker niet 'exit' intypt blijf je vragen om boeken toe te voegen.
+
+Van zodra de gebruiker 'exit' heeft ingegeven, sorteer je de boeken op naam en toon je alle boeken.

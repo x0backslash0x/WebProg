@@ -1,0 +1,36 @@
+Onderstaande JSON dataset bevat de beoordelingen van Science Fiction boeken.
+We zouden deze graag mooi weergeven in de terminal.
+
+De gegevens zijn in te laden door gebruik te maken van het volgende api-endpoint via een GET-request:
+
+https://examen-webprogramming-ap.surge.sh/books.json
+
+Gebruik async / await en niét promise / callback
+
+Zorg dat je resultaat onderstaande structuur bevat.
+
+----------------------------------
+| Science Fiction Book Ratings |
+----------------------------------
+
+Dune by Frank Herbert
+
+Total average score: 9.33
+
+Criteria | Score | Max Score
+
+Writing style | 9.5 | 10
+
+Plot | 9.0 | 10
+
+Character Development | 8.8 | 10
+
+World Building | 10.0 | 10
+
+Originality | 9.5 | 10
+
+Overall Impression | 9.2 | 10
+
+Neuromancer by William Gibson
+
+....

@@ -1,0 +1,10 @@
+Maak gebruik van array methods om deze oefening op te lossen (concat, map, filter, sort, reduce, findIndex, ...), maar gebruik GEEN  for loop of forEach.
+maak een nieuwe array aan:
+
+    [2] deze array zal alle boeken bevatten waar een film van gemaakt is.
+        een film is een adaptation van type: 'movie'
+    [1] sorteer de objecten in de nieuwe array eerst volgens publication_year, als twee jaren gelijk zijn, sorteer je op naam
+    [2] verander elk object in de nieuwe array,  zodat title (bv. "Pebble in the Sky - Galactic Empire Series") nu wordt opgesplitst tussen title (bv. "Pebble in the Sky") en series (bv. "Galactic Empire Series")
+        gebruik string.split om een string op te splitsen in meerdere (sub)strings.
+        OPGELET! Sommige boeken zijn geen onderdeel van een serie (bv. "The End of Eternity"). Daar zet je de waarde van series op false.
+    [1] gebruik method chaining waar mogelijk
