@@ -19,7 +19,7 @@
 
 import * as readline from 'readline-sync';
 
-type soort = "ROMANCE | SCIENCE FICTION | DETECTIVE";
+type soort = "ROMANCE" | "SCIENCE FICTION" | "DETECTIVE";
 
 interface Boek {
     naam: string;
@@ -64,8 +64,16 @@ class boeken implements Boek {
     
 }
 
-let input: string = "";
-do (input = readline.question("Wil je een boek ingeven? (exit om te stoppn) ")) {
-    
+//let boekNaamInput: string = readline.question("Wat is de naam van het boek? ");
+//let boekAuteurInput: string = readline.question("Wat is de auteur van het boek? ");
+//let boekSoortInput: string = readline.question("Wat is de soort van het boek? (ROMANCE | SCIENCE FICTION | DETECTIVE) ");
+/* if (boekSoortInput == 'ROMANCE' || boekSoortInput == 'SCIENCE FICTION' || boekSoortInput == 'DETECTIVE') {
+    let boekSoort: soort = boekSoortInput;
+    let boek1: boeken = new boeken(boekNaamInput, boekAuteurInput, boekSoort);
+    console.log(`Titel: ${boek1.naam}, \nAuteur: ${boek1.autheur}, \nSoort: ${boek1.soort}`);
+} else {
+    console.log("verkeerde soort");
+} */
 
-} while (input != "exit")
+let boek1: boeken = new boeken("mijn boek", "mezelf", "DETECTIVE");
+console.log(`Titel: ${boek1.naam}, \nAuteur: ${boek1.autheur}, \nSoort: ${boek1.soort}`);
