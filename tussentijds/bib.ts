@@ -6,6 +6,17 @@
 //
 // tussentijdse toest vraag 3
 
+/**
+ * Feedback na inzending:
+ * 
+ * class boeken correct, interface Boek was niet nodig voor deze opdracht (1)
+ * encapsulatie correct (2)
+ * geen module (0)
+ * type correct (1)
+ * user input niet afgewerkt
+ * sortering eindresultaat niet afgewerkt
+ */
+
 import * as readline from 'readline-sync';
 
 type soort = "ROMANCE | SCIENCE FICTION | DETECTIVE";

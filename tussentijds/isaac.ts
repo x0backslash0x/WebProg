@@ -6,6 +6,14 @@
 //
 // tussentijdse toest vraag 1
 
+/**
+ * Feedback na inzending:
+ * 
+ * geen array operaties...
+ * We hadden nodig:
+ * json.filter(...).sort(...).map(...);
+ */
+
 const json = [
     {
       "title": "Pebble in the Sky - Galactic Empire Series",

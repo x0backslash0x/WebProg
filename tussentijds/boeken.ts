@@ -6,6 +6,14 @@
 //
 // tussentijdse toest vraag 2
 
+/**
+ * Feedback na inzending:
+ * 
+ * ophalen gegevens correct (1)
+ * interfaces onvolledig (1)
+ * de rest niet afgewerkt
+ */
+
 interface SciFiboeken {
     name: string;
     avg: number;
