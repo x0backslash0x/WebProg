@@ -1,3 +1,11 @@
+//isaac.ts
+//
+// 2024-2025 Patrick Lanove
+// BA Electronica-ICT/Cybersecurity
+// OLOD Web programming
+//
+// tussentijdse toest vraag 3
+
 import * as readline from 'readline-sync';
 
 type soort = "ROMANCE | SCIENCE FICTION | DETECTIVE";
