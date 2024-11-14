@@ -49,8 +49,10 @@ function populateTable(colls: number, rows: number, table: HTMLTableElement): HT
 }
 
 button?.addEventListener("click", () => {
-  const colls = Number(document.querySelector("#colls")?.value);
-  const rows = Number(document.querySelector("#rows")?.value);
+  const inputcolls: HTMLInputElement = document.querySelector("#colls");
+  const inputrows: HTMLInputElement = document.querySelector("#rows");
+  const colls: number = Number(inputcolls?.value);
+  const rows: number = Number(inputrows?.value);
 
   const table = populateTable(colls, rows, createTable());
   body?.appendChild(table);
