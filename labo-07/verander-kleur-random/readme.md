@@ -1,9 +1,8 @@
-# 2024-2025 BA Electronica-ICT
+# Labo 7 Oefening 5 verander kleuren random
+    2024-2025 BA Electronica-ICT
     Vervolgtraject IT and Cybersecurity & Cloud
     OLOD Web Programming
 
-    
-    Labo 7 Oefening 5 verander kleuren random
 
 OPGAVE
 ------
