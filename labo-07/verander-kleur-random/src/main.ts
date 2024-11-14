@@ -2,8 +2,7 @@
 
 import './style.css'
 
-const button2 = document.querySelector("button");
-const button4 = document.querySelector("#knop4");
+const button = document.querySelector("button");
 const body = document.querySelector("body");
 
 function createTable(colls: number): HTMLTableElement | undefined {
@@ -32,21 +31,10 @@ function createTable(colls: number): HTMLTableElement | undefined {
   return newtable;
 }
 
-button2?.addEventListener("click", () => {
-  const table = createTable(2);
-  body?.appendChild(table);
+button?.addEventListener("click", () => {
+  const colls = document.querySelector("input")?.value;
 
-  const cells = document.querySelectorAll("td");
-  for(let i = 0; i < cells.length; i++) {
-    const cell = cells[i];
-    if(Number(cell.textContent) > 10) {
-      cell.classList.toggle('verkleurd');
-    }
-  }
-})
-
-button4?.addEventListener("click", () => {
-  const table = createTable(4);
+  const table = createTable(Number(colls));
   body?.appendChild(table);
 
   const cells = document.querySelectorAll("td");
