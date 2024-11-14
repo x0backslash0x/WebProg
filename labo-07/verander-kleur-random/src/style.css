@@ -1,0 +1,11 @@
+table, tr, td {
+  border: 1px solid black;
+}
+
+button {
+  margin-bottom: 5px;
+}
+
+.verkleurd {
+  background-color: red;
+}
