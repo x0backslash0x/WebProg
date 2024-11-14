@@ -5,7 +5,7 @@ import './style.css'
 const button = document.querySelector("button");
 const body = document.querySelector("body");
 
-function createTable(): HTMLTableElement | undefined {
+function createTable(): HTMLTableElement {
   const table = document.querySelector("table");
 
   if(table) {
@@ -16,7 +16,7 @@ function createTable(): HTMLTableElement | undefined {
   return newtable;
 }
 
-function populateTable(colls: number, table: HTMLTableElement): HTMLTableElement | undefined {
+function populateTable(colls: number, table: HTMLTableElement): HTMLTableElement {
   const tbody = document.createElement("tbody");
   table.appendChild(tbody);
 
