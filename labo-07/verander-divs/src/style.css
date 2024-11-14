@@ -1,0 +1,14 @@
+div {
+  border: 1px solid black;
+  width: 50%;
+  margin: auto;
+  margin-top: 5px;
+}
+
+button {
+  margin-top: 15px;
+}
+
+.verkleurd {
+  background-color:  yellow;
+}
