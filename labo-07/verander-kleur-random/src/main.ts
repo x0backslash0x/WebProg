@@ -24,11 +24,11 @@ function createTable(): HTMLTableElement {
   return newtable;
 }
 
-function populateTable(colls: number, table: HTMLTableElement): HTMLTableElement {
+function populateTable(colls: number, rows: number, table: HTMLTableElement): HTMLTableElement {
   const tbody = document.createElement("tbody");
   table.appendChild(tbody);
 
-  for(let i = 1; i < 5; i++) {
+  for(let i = 1; i < rows + 1; i++) {
     const row = document.createElement("tr");
     for(let i = 1; i < colls + 1; i++) {
       const cell = document.createElement("td");
@@ -45,9 +45,10 @@ function populateTable(colls: number, table: HTMLTableElement): HTMLTableElement
 }
 
 button?.addEventListener("click", () => {
-  const colls = Number(document.querySelector("input")?.value);
+  const colls = Number(document.querySelector("#colls")?.value);
+  const rows = Number(document.querySelector("#rows")?.value);
 
-  const table = populateTable(colls, createTable());
+  const table = populateTable(colls, rows, createTable());
   body?.appendChild(table);
 
   const cells = document.querySelectorAll("td");
