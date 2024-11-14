@@ -14,6 +14,19 @@
  * json.filter(...).sort(...).map(...);
  */
 
+interface adaptation {
+  title: string;
+  type: string;
+  year: number;
+}
+
+interface json {
+  title: string;
+  publication_year: number;
+  synopsys: string;
+  adaptation: adaptation[];
+}
+
 const json = [
     {
       "title": "Pebble in the Sky - Galactic Empire Series",
