@@ -2,6 +2,10 @@ table, tr, td {
   border: 1px solid black;
 }
 
+td {
+  font-size: x-large;
+}
+
 button {
   margin-bottom: 5px;
 }
