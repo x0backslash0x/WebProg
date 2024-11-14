@@ -5,6 +5,14 @@ import './style.css'
 const button = document.querySelector("button");
 const body = document.querySelector("body");
 
+// return random number between 1 and 99
+function generateNumber(): Number {
+  let rand = Math.floor((Math.random() * 100));
+  if(rand == 0) {rand = 1}
+
+  return rand;
+}
+
 function createTable(): HTMLTableElement {
   const table = document.querySelector("table");
 
@@ -24,7 +32,7 @@ function populateTable(colls: number, table: HTMLTableElement): HTMLTableElement
     const row = document.createElement("tr");
     for(let i = 1; i < colls + 1; i++) {
       const cell = document.createElement("td");
-      const rand = Math.floor((Math.random() * 100));
+      const rand = generateNumber();
       cell.appendChild(document.createTextNode(String(rand)));
       row.appendChild(cell);
     }
