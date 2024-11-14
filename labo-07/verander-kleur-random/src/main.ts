@@ -24,6 +24,12 @@ function createTable(): HTMLTableElement {
   return newtable;
 }
 
+function createCell(content: string): HTMLTableCellElement {
+    const cell = document.createElement("td");
+    cell.appendChild(document.createTextNode(content));
+    return cell;
+}
+
 function populateTable(colls: number, rows: number, table: HTMLTableElement): HTMLTableElement {
   const tbody = document.createElement("tbody");
   table.appendChild(tbody);
@@ -31,10 +37,8 @@ function populateTable(colls: number, rows: number, table: HTMLTableElement): HT
   for(let i = 1; i < rows + 1; i++) {
     const row = document.createElement("tr");
     for(let i = 1; i < colls + 1; i++) {
-      const cell = document.createElement("td");
-      const rand = generateNumber();
-      cell.appendChild(document.createTextNode(String(rand)));
-      row.appendChild(cell);
+      const rand = String(generateNumber());
+      row.appendChild(createCell(rand));
     }
 
     tbody.appendChild(row);
