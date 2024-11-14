@@ -5,7 +5,7 @@ import './style.css'
 const button = document.querySelector("button");
 const body = document.querySelector("body");
 
-function createTable(colls: number): HTMLTableElement | undefined {
+function createTable(): HTMLTableElement | undefined {
   const table = document.querySelector("table");
 
   if(table) {
@@ -13,8 +13,12 @@ function createTable(colls: number): HTMLTableElement | undefined {
   }
 
   const newtable = document.createElement("table");
+  return newtable;
+}
+
+function populateTable(colls: number, table: HTMLTableElement): HTMLTableElement | undefined {
   const tbody = document.createElement("tbody");
-  newtable.appendChild(tbody);
+  table.appendChild(tbody);
 
   for(let i = 1; i < 5; i++) {
     const row = document.createElement("tr");
@@ -28,13 +32,14 @@ function createTable(colls: number): HTMLTableElement | undefined {
     tbody.appendChild(row);
   }
 
-  return newtable;
+  table?.appendChild(tbody);
+  return table;
 }
 
 button?.addEventListener("click", () => {
   const colls = document.querySelector("input")?.value;
 
-  const table = createTable(Number(colls));
+  const table = populateTable(Number(colls), createTable());
   body?.appendChild(table);
 
   const cells = document.querySelectorAll("td");
