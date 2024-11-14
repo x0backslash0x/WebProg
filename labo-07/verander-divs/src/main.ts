@@ -1,3 +1,5 @@
+/// <reference types="vite/client" />
+
 import './style.css'
 
 const style: string = "verkleurd";
