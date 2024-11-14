@@ -19,14 +19,13 @@ button?.addEventListener("click", () => {
 
   for(let i = 1; i < 5; i++) {
     const row = document.createElement("tr");
-    const cell1 = document.createElement("td");
-    const cell2 = document.createElement("td");
-    const rand1 = Math.floor((Math.random() * 100));
-    const rand2 = Math.floor((Math.random() * 100));
-    cell1.appendChild(document.createTextNode(String(rand1)));
-    cell2.appendChild(document.createTextNode(String(rand2)));
-    row.appendChild(cell1);
-    row.appendChild(cell2);
+    for(let i = 1; i < 3; i++) {
+      const cell = document.createElement("td");
+      const rand = Math.floor((Math.random() * 100));
+      cell.appendChild(document.createTextNode(String(rand)));
+      row.appendChild(cell);
+    }
+
     tbody.appendChild(row);
   }
   
