@@ -1,0 +1,14 @@
+{
+  "name": "demos",
+  "version": "1.0.0",
+  "description": "2024-2025 BA Electronica-ICT     Vervolgtraject IT and Cybersecurity & Cloud     OLOD Web Programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^22.9.1"
+  }
+}
