@@ -17,9 +17,4 @@ interface Uitvinder {
 import json from "./uitvinders.json"
 const uitvinders: Uitvinder[] = json;
 
-console.log(uitvinders.filter((uitvinder: Uitvinder) => {
-    const year: number = uitvinder.year;
-    if (year >= 1500 && year < 1600) {
-        return uitvinder;
-    }
-}))
+console.log(uitvinders.filter((uitvinder: Uitvinder) => uitvinder.year >= 1500 && uitvinder.year < 1600));
