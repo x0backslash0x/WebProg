@@ -93,6 +93,19 @@ app.post("/reis", (req: Request, res: Response) => {
     res.sendStatus(200);
 });
 
+// localhost:port/reis/1/kost
+app.post("reis/:reisid/kost", (req: Request, res: Response) => {
+    //deze route maakt één kost aan voor een reis met de reisid.
+    // format: {"uitgave": "treinticket", "prijs": 100}
+    console.log(req.params.reisid);
+    const id: number = Number(req.params.reisid);
+    const kost: Kost = new Kost(req.body.uitgave, req.body.prijs);
+    let reis: Reis | undefined = reizen.find((reis: Reis) => reis.id == id);
+    reis?.kosten.push(kost);
+    console.log(reis);
+    res.sendStatus(200);
+});
+
 app.use((req: Request, res: Response) => {
     res.status(404).send("404 niets gevonden");
 });
