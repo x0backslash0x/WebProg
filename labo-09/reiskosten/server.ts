@@ -50,3 +50,5 @@ class Kost {
         }
     }
 }
+
+let reizen: Reis[] = [];
