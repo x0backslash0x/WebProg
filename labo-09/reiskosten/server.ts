@@ -58,3 +58,6 @@ console.log(reizen);
 
 let kostLondon: Kost = new Kost("treintickets", 100);
 console.log(kostLondon);
+let reisLondon: Reis = reizen[0]
+reisLondon.kosten.push(kostLondon);
+console.log(reisLondon)
