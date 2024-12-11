@@ -52,3 +52,6 @@ class Kost {
 }
 
 let reizen: Reis[] = [];
+reizen.push(new Reis("London", 2024));
+reizen.push(new Reis("Lisabon", 2022));
+console.log(reizen);
