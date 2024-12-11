@@ -68,6 +68,7 @@ app.use(express.json());
 const hostname: string = "127.0.0.1";
 const port: number = 3000;
 
+// localhost:port/reizen
 app.get("/reizen", (req: Request, res: Response) => {
     // deze route geeft alle reizen uit de database in JSON formaat terug
     res.status(200).send(reizen);
@@ -82,8 +83,10 @@ app.get("/reis/:reisid", (req: Request, res: Response) => {
     res.status(200).send(reis);
 });
 
+// localhost:port/reis
 app.post("/reis", (req: Request, res: Response) => {
     // deze route maakt één reis aan in de database.
+    // format: {"bestemming": "London", "jaar": 2024}
     const reis: Reis = new Reis(req.body.bestemming, req.body.jaar)
     reizen.push(reis);
     console.log(reizen);
