@@ -51,8 +51,8 @@ class Kost {
     }
 }
 
-/* let reizen: Reis[] = [];
-reizen.push(new Reis("London", 2024));
+let reizen: Reis[] = [];
+/* reizen.push(new Reis("London", 2024));
 reizen.push(new Reis("Lisabon", 2022));
 console.log(reizen);
 
@@ -67,6 +67,14 @@ const app: Express = express();
 app.use(express.json());
 const hostname: string = "127.0.0.1";
 const port: number = 3000;
+
+app.post("/reis", (req: Request, res: Response) => {
+    // deze route maakt één reis aan in de database.
+    const reis: Reis = new Reis(req.body.bestemming, req.body.jaar)
+    reizen.push(reis);
+    console.log(reizen);
+    res.sendStatus(200);
+});
 
 app.use((req: Request, res: Response) => {
     res.status(404).send("404 niets gevonden");
