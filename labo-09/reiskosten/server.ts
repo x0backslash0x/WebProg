@@ -18,6 +18,7 @@ class Reis {
         this.id = id;
         this.bestemming = bestemming;
         this.jaar = jaar;
+        this.kosten = [];
     }
 
     toJSON() {
