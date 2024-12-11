@@ -73,6 +73,15 @@ app.get("/reizen", (req: Request, res: Response) => {
     res.status(200).send(reizen);
 });
 
+// hostname:port/reis/1
+app.get("/reis/:reisid", (req: Request, res: Response) => {
+    //deze route vraagt één reis op adhv de request parameter ‘reisid’.
+    let id: number = Number(req.params.reisid);
+    let reis: Reis | undefined = reizen.find((reis: Reis) => reis.id == id);
+    console.log(reis);
+    res.status(200).send(reis);
+});
+
 app.post("/reis", (req: Request, res: Response) => {
     // deze route maakt één reis aan in de database.
     const reis: Reis = new Reis(req.body.bestemming, req.body.jaar)
