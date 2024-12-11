@@ -58,6 +58,7 @@ console.log(reizen);
 
 let kostLondon: Kost = new Kost("treintickets", 100);
 console.log(kostLondon);
-let reisLondon: Reis | undefined = reizen.find((reis: Reis) => reis.bestemming.startsWith("London"));
+const idLondon: number = 1;
+let reisLondon: Reis | undefined = reizen.find((reis: Reis) => reis.id == idLondon);
 reisLondon?.kosten.push(kostLondon);
 console.log(reisLondon)
