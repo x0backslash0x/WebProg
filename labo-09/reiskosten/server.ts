@@ -51,7 +51,7 @@ class Kost {
     }
 }
 
-let reizen: Reis[] = [];
+/* let reizen: Reis[] = [];
 reizen.push(new Reis("London", 2024));
 reizen.push(new Reis("Lisabon", 2022));
 console.log(reizen);
@@ -61,4 +61,17 @@ console.log(kostLondon);
 const idLondon: number = 1;
 let reisLondon: Reis | undefined = reizen.find((reis: Reis) => reis.id == idLondon);
 reisLondon?.kosten.push(kostLondon);
-console.log(reisLondon)
+console.log(reisLondon) */
+
+const app: Express = express();
+app.use(express.json());
+const hostname: string = "127.0.0.1";
+const port: number = 3000;
+
+app.use((req: Request, res: Response) => {
+    res.status(404).send("404 niets gevonden");
+});
+
+app.listen(port, hostname, () => {
+    console.log(`Server listening on http://${hostname}:${port}/`);
+});
