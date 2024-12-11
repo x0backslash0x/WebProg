@@ -8,14 +8,17 @@
 
 import express, {Express, Request, Response} from "express";
 
+let counter: number = 0;
+
 class Reis {
     id: number;
     bestemming: string;
     jaar: number;
     kosten: Kost[];
 
-    constructor(id: number, bestemming: string, jaar: number) {
-        this.id = id;
+    constructor(bestemming: string, jaar: number) {
+        counter += 1;
+        this.id = counter;
         this.bestemming = bestemming;
         this.jaar = jaar;
         this.kosten = [];
