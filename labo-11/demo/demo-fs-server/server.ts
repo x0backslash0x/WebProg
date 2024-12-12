@@ -1,5 +1,5 @@
 import express, {Express, Request, Response} from 'express';
-import mysql, { ConnectionOptions, Connection } from 'mysql2';
+import mysql, { ConnectionOptions, Connection } from 'mysql2/promise';
 import cors from 'cors';
 import { METHODS } from 'http';
 

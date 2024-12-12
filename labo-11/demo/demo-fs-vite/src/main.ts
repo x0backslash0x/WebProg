@@ -1,7 +1,5 @@
-import './style.css'
-
-const formElement = document.querySelector("#myForm");
-const formMessage = document.querySelector("#resoneMessage");
+const formElement: HTMLFormElement | null = document.querySelector("#myForm");
+const formMessage: Element | null = document.querySelector("#responseMessage");
 
 interface MyFormData {
   name: string;
