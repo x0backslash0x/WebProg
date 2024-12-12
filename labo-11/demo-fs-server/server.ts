@@ -34,6 +34,17 @@ app.post("/sendData", async (req: Request, res: Response) => {
 
 });
 
+app.get("/users", async (req: Request, res: Response) => {
+    try {
+        const conn: Connection = await mysql.createConnection(access);
+        const [result] = await conn.query("SELECT * FROM users"),
+            ([json.name, json.email]);    
+        res.status(200).send(result);
+    } catch (error) {
+        res.status(500).send("Er is een fout opgetreden");
+    }
+});
+
 app.listen(port, hostname, () => {
     console.log(`Server listening on http://${hostname}:${port}`);
 });
