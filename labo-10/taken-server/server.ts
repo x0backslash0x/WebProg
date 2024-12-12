@@ -64,13 +64,14 @@ app.post("/task", async (req: Request, res: Response) => {
     //GET /task (een nieuwe taak toevoegen)
     try {
         let json: intTaak = req.body;
-        console.log(json);
         const omschrijving: any = json.omschrijving
         const naam: any = json.naam;
+        const preparedStatement: string = `INSERT INTO ${table}(omschrijving, naam) VALUES(?, ?)`;
 
         const conn: Connection = await mysql.createConnection(access);
-        const [result] = await conn.query("INSERT INTO taken(omschrijving, naam) VALUES(?, ?)", [omschrijving, naam]);
+        const [result] = await conn.query(preparedStatement, [omschrijving, naam]);
         res.status(200).send("Data is aangekomen");
+        console.log(preparedStatement);
     } catch (error) {
         res.sendStatus(500);
         console.log(error);
