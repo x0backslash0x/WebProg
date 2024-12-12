@@ -1,8 +1,16 @@
 import express, {Express, Request, Response} from 'express';
 import mysql, { ConnectionOptions, Connection } from 'mysql2';
+import cors from 'cors';
+import { METHODS } from 'http';
+
+const options = {
+    origin: 'http://ap.be',
+    METHODS: 'GET,POST'
+}
 
 const app: Express = express();
 app.use(express.json());
+app.use(cors(options));
 
 const hostname: string = "127.0.0.1";
 const port: number = 3000;
