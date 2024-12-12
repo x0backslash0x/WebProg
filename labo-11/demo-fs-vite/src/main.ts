@@ -37,7 +37,22 @@ formElement?.addEventListener("submit", async (event) => { // async kan ook gebr
     console.log(error);
     formMessage?.textContent = "Er is een fout opgetreden";
   }
+});
 
+const button = document.querySelector("#loadData");
+button?addEventListener("click", async (event) => {
+  const response = await fetch("http://localhost:3000/users");
+  const data: MyFormData[] = await response.json();
 
-
+  const myTable = document.querySelector("#myData");
+  data.forEach((row) => {
+    let tr = document.createElement("tr");
+    let tdName = document.createElement("td");
+    tdName.innerText = row.name;
+    tr.appendChild(tdName);
+    let tdEmail = document.createElement("td");
+    tdEmail.innerText = row.name;
+    tr.appendChild(tdEmail);
+    myTable?.appendChild(tr);
+  });
 });
