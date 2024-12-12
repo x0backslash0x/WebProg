@@ -39,12 +39,20 @@ app.use(express.json());
 
 const hostname: string = "127.0.0.1";
 const port: number = 3000;
+const table: string = "TAKEN";
 
-let taken: Taak[] = [];
-
-app.get("/tasks", (req: Request, res: Response) => {
+app.get("/tasks", async (req: Request, res: Response) => {
     //GET /tasks (alle taken opvragen)
-    res.status(200).send(taken);
+    try {
+        let json: intTaak[] = [];
+        const query: string = "SELECT * FROM " + table;
+        const conn: Connection = await mysql.createConnection(access);
+        const [result] = await conn.query(query);
+        res.status(200).send(result);
+    } catch (error) {
+        res.sendStatus(500);
+        console.log(error);
+    }
 });
 
 app.get("/task", (req: Request, res: Response) => {
