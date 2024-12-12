@@ -7,7 +7,12 @@
  * labo 10 oefening 2 taken server
  */
 
-class Taak {
+interface intTaak {
+    omschrijving: string;
+    naam: string;
+}
+
+class Taak implements intTaak {
     omschrijving: string;
     naam: string;
 
