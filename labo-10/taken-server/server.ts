@@ -30,6 +30,27 @@ app.use(express.json());
 const hostname: string = "127.0.0.1";
 const port: number = 3000;
 
+let taken: Taak[] = [];
+
+app.get("/tasks", (req: Request, res: Response) => {
+    //GET /tasks (alle taken opvragen)
+    res.status(200).send(taken);
+});
+
+app.get("/task", (req: Request, res: Response) => {
+    //GET /task (de eerstvolgende taak opvragen)
+    //nog onduidelijk wat hier juist moet gebeuren
+});
+
+app.post("/task", (req: Request, res: Response) => {
+    //GET /task (een nieuwe taak toevoegen)
+    const omschrijving: any = req.query.omschrijving;
+    const naam: any = req.query.naam;
+    taken.push(new Taak(omschrijving, naam));
+    console.log(taken);
+    res.sendStatus(200);
+});
+
 app.use((req: Request, res: Response) => {
     res.status(404).send("Hier is niets gevonden");
 });
