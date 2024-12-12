@@ -51,6 +51,14 @@ app.post("/task", (req: Request, res: Response) => {
     res.sendStatus(200);
 });
 
+app.delete("/task", (req: Request, res: Response) => {
+    //GET /task (een taak verwijderen)
+    const omschrijving: any = req.query.omschrijving;
+    const naam: any = req.query.naam;
+    //taak verwijderen
+    res.sendStatus(200);
+});
+
 app.use((req: Request, res: Response) => {
     res.status(404).send("Hier is niets gevonden");
 });
