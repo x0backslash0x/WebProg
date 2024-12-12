@@ -77,12 +77,21 @@ app.post("/task", async (req: Request, res: Response) => {
     }
 });
 
-app.delete("/task", (req: Request, res: Response) => {
-    //GET /task (een taak verwijderen)
-    const omschrijving: any = req.query.omschrijving;
-    const naam: any = req.query.naam;
-    //taak verwijderen
-    res.sendStatus(200);
+// DELETE localhost:3000/task?omschrijving=<omschrijving>&naam=<naam>
+app.delete("/task", async (req: Request, res: Response) => {
+    try { //GET /task (een taak verwijderen)
+        const omschrijving: any = req.query.omschrijving;
+        const naam: any = req.query.naam;
+        const query: string = `DELETE FROM ${table} WHERE omschrijving='${omschrijving}' AND naam='${naam}'`;
+
+        const conn: Connection = await mysql.createConnection(access);
+        const [result] = await conn.query(query);
+        res.sendStatus(200);
+        console.log(query);
+    } catch (error) {
+        res.sendStatus(500);
+        console.log(error);
+    }
 });
 
 app.use((req: Request, res: Response) => {
