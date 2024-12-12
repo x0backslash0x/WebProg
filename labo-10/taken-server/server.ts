@@ -8,6 +8,8 @@
  */
 
 import express, { Express, Request, Response } from 'express';
+import mysql, { Connection, ConnectionOptions } from "mysql2/promise";
+import { MYSQL_PWD } from './env';
 
 interface intTaak {
     omschrijving: string;
@@ -22,6 +24,14 @@ class Taak implements intTaak {
         this.omschrijving = omschrijving;
         this.naam = naam;
     }
+}
+
+const access: ConnectionOptions = {
+    host: "localhost",
+    user: "root",
+    password: MYSQL_PWD,
+    database: "taken",
+    connectionLimit: 1,
 }
 
 const app: Express = express();
