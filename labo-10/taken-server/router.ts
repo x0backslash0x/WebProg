@@ -28,10 +28,18 @@ export const router: Router = express.Router();
 const table: string = "TAKEN";
 
 router.route("/task")
-    // GET localhost:3000/task
-    .get((req: Request, res: Response) => {
-        //GET /task (de eerstvolgende taak opvragen)
-        //nog onduidelijk wat hier juist moet gebeuren
+    // GET localhost:3000/task (de eerstvolgende taak opvragen)
+    .get(async(req: Request, res: Response) => {
+        try {
+            let json: intTaak[] = [];
+            const query: string = "SELECT * FROM " + table +  " LIMIT 1";
+            const conn: Connection = await mysql.createConnection(access);
+            const [result] = await conn.query(query);
+            res.status(200).send(result);
+        } catch (error) {
+            res.sendStatus(500);
+            console.log(error);
+        }
     })
 
     //POST localhost:3000/task:<json> (een nieuwe taak toevoegen)
