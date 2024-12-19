@@ -27,7 +27,7 @@ const access: ConnectionOptions = {
 export const router: Router = express.Router();
 const table: string = "TAKEN";
 
-router.route("/")
+router.route("/task")
     // GET localhost:3000/task
     .get((req: Request, res: Response) => {
         //GET /task (de eerstvolgende taak opvragen)
@@ -63,6 +63,21 @@ router.route("/")
             const [result] = await conn.query(query);
             res.sendStatus(200);
             console.log(query);
+        } catch (error) {
+            res.sendStatus(500);
+            console.log(error);
+        }
+    });
+
+router.route("/tasks")
+    // GET localhost:3000/tasks (alle taken opvragen)
+    .get(async (req: Request, res: Response) => {
+        try {
+            let json: intTaak[] = [];
+            const query: string = "SELECT * FROM " + table;
+            const conn: Connection = await mysql.createConnection(access);
+            const [result] = await conn.query(query);
+            res.status(200).send(result);
         } catch (error) {
             res.sendStatus(500);
             console.log(error);
