@@ -1,0 +1,38 @@
+/* analyse-opgave.txt
+ *
+ * 2024-2025 Patrick Lanove
+ * BA Electronica-ICT/Cybersecurity
+ * OLOD Web programming
+ * 
+ * labo 10 oefening 3 taken server met prioriteit
+ * deze oefening bouwt verder op taken server (1002)
+**/
+
+AANPASSINGEN
+------------
+interface wordt uigebreid met 1 property: prioriteit
+
+in de tabel:
+    * word een nieuwe taak achter de laatste rij toegoevoegd
+
+uitbreiding bestaande api's
+    * GET tasks
+        - taken sorteren op prioriteit, aflopend
+    * GET task
+        - taak met prioriteit 1 ophalen
+    * DELETE task
+        - numering bijwerken na verwijderen
+
+
+TOEVOEGINGEN
+------------
+POST task-urgent
+    - taak toevoegen met prioriteit 1
+    - prioriteit van andere taken opschuiven (+1)
+
+
+VEREISTEN
+---------
+* prioriteit is een uniek nummer
+* prioriteit mag niet leeg zijn
+* nummering prioriteiten moet aansluiten
