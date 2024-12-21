@@ -8,8 +8,11 @@
  * deze oefening bouwt verder op taken server (1002)
 **/
 
-TODO24121901 prioriteit property toevoegen
+TODO24121901 taak interface aanpassen
 beschrijving taken objecten hebben nu ook een prioriteit property
+
+TODO24122101 mysql tabel uitbreiden
+beschrijving taken kolom toevoegen
 
 TODO24121903 get tasks aanpassen
 beschrijving taken moeten aflopend gesorteerd worden
