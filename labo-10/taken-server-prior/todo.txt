@@ -1,0 +1,20 @@
+/* todo.txt
+ *
+ * 2024-2025 Patrick Lanove
+ * BA Electronica-ICT/Cybersecurity
+ * OLOD Web programming
+ * 
+ * labo 10 oefening 3 taken server met prioriteit
+ * deze oefening bouwt verder op taken server (1002)
+**/
+
+TODO24121901 prioriteit property toevoegen aan taak interface
+TODO24121902 prioriteit veld toevoegen aan mysql tabel
+TODO24121903 get tasks aanpassen om aflopend te sorteren 
+TODO24121904 get task aanpassen om enkel prioriteit 1 op te halen
+TODO24121905 delete task aanpassen om numering bij te werken na verwijderen
+TODO24121906 post task-urgent implementeren
+
+
+VOLTOOID
+--------
