@@ -10,29 +10,28 @@
 
 AANPASSINGEN
 ------------
-interface wordt uigebreid met 1 property: prioriteit
-
-in de tabel:
-    * word een nieuwe taak achter de laatste rij toegoevoegd
+nieuwe property voor interface taak: prioriteit
 
 uitbreiding bestaande api's
     * GET tasks
-        - taken sorteren op prioriteit, aflopend
+        taken sorteren op prioriteit, aflopend
     * GET task
-        - taak met prioriteit 1 ophalen
+        taak met prioriteit 1 ophalen
     * DELETE task
-        - numering bijwerken na verwijderen
+        numering bijwerken na verwijderen (zodat deze aansluiten)
 
 
 TOEVOEGINGEN
 ------------
 POST task-urgent
-    - taak toevoegen met prioriteit 1
     - prioriteit van andere taken opschuiven (+1)
+    - taak toevoegen met prioriteit 1
 
 
 VEREISTEN
 ---------
-* prioriteit is een uniek nummer
-* prioriteit mag niet leeg zijn
-* nummering prioriteiten moet aansluiten
+prioriteit is een uniek nummer
+prioriteit mag niet leeg zijn
+nummering prioriteiten moet aansluiten
+nieuwe taak komt achteraan in de tabel
+nieuwe taak krijgt prioriteit 1 als er geen andere taken zijn
