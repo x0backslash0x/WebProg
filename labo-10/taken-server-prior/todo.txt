@@ -8,12 +8,20 @@
  * deze oefening bouwt verder op taken server (1002)
 **/
 
-TODO24121901 prioriteit property toevoegen aan taak interface
-TODO24121902 prioriteit veld toevoegen aan mysql tabel
-TODO24121903 get tasks aanpassen om aflopend te sorteren 
-TODO24121904 get task aanpassen om enkel prioriteit 1 op te halen
-TODO24121905 delete task aanpassen om numering bij te werken na verwijderen
+TODO24121901 prioriteit property toevoegen
+beschrijving taken objecten hebben nu ook een prioriteit property
+
+TODO24121903 get tasks aanpassen
+beschrijving taken moeten aflopend gesorteerd worden
+
+TODO24121904 get task aanpassen
+beschrijving enkel taak met prioriteit 1 ophalen
+
+TODO24121905 delete task aanpassen
+beschrijving numering taken bijwerken na verwijderen (zodat deze aansluiten)
+
 TODO24121906 post task-urgent implementeren
+beschrijving een taak met prioriteit 1 invoegen en andere prioriteiten 1 opschuiven
 
 
 VOLTOOID
