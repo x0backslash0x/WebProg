@@ -47,13 +47,14 @@ router.route("/task")
     //POST localhost:3000/task:<json> (een nieuwe taak toevoegen)
     .post(async (req: Request, res: Response) => {
         try {
-            let json: Taak = req.body; // {"omschrijving": "<omschrijving>", "naam": "<naam>"}
+            let json: Taak = req.body; // {"omschrijving": "<omschrijving>", "naam": "<naam>", "prioriteit": <prioriteit>}
             const omschrijving: any = json.omschrijving
             const naam: any = json.naam;
-            const preparedStatement: string = `INSERT INTO ${table}(omschrijving, naam) VALUES(?, ?)`;
+            const prioriteit: any = json.prioriteit;
+            const preparedStatement: string = `INSERT INTO ${table}(omschrijving, naam, prioriteit) VALUES(?, ?, ?)`;
 
             const conn: Connection = await mysql.createConnection(access);
-            const [result] = await conn.query(preparedStatement, [omschrijving, naam]);
+            const [result] = await conn.query(preparedStatement, [omschrijving, naam, prioriteit]);
             res.status(200).send("Data is aangekomen");
             console.log(preparedStatement);
         } catch (error) {
