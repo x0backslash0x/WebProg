@@ -14,9 +14,6 @@ beschrijving taken kolom toevoegen
 TODO24121903 get tasks aanpassen
 beschrijving taken moeten aflopend gesorteerd worden
 
-TODO24121904 get task aanpassen
-beschrijving enkel taak met prioriteit 1 ophalen
-
 TODO24121905 delete task aanpassen
 beschrijving numering taken bijwerken na verwijderen (zodat deze aansluiten)
 
@@ -31,3 +28,6 @@ beschrijving taken objecten hebben nu ook een prioriteit property
 
 TODO24122201 post task aanpassen
 beschrijving prioriteit moet nu ook meegegeven worden
+
+TODO24121904 get task aanpassen
+beschrijving enkel taak met prioriteit 1 ophalen

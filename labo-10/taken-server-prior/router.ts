@@ -34,7 +34,7 @@ router.route("/task")
     .get(async(req: Request, res: Response) => {
         try {
             let json: Taak[] = [];
-            const query: string = "SELECT * FROM " + table +  " LIMIT 1";
+            const query: string = "SELECT * FROM " + table +  " WHERE prioriteit=1";
             const conn: Connection = await mysql.createConnection(access);
             const [result] = await conn.query(query);
             res.status(200).send(result);
