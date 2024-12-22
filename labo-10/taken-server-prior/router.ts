@@ -12,7 +12,7 @@ import express, { Router, Request, Response } from 'express';
 import mysql, { Connection, ConnectionOptions } from "mysql2/promise";
 import { MYSQL_PWD } from './env';
 
-interface intTaak {
+interface Taak {
     omschrijving: string;
     naam: string;
 }
@@ -32,7 +32,7 @@ router.route("/task")
     // GET localhost:3000/task (de eerstvolgende taak opvragen)
     .get(async(req: Request, res: Response) => {
         try {
-            let json: intTaak[] = [];
+            let json: Taak[] = [];
             const query: string = "SELECT * FROM " + table +  " LIMIT 1";
             const conn: Connection = await mysql.createConnection(access);
             const [result] = await conn.query(query);
@@ -46,7 +46,7 @@ router.route("/task")
     //POST localhost:3000/task:<json> (een nieuwe taak toevoegen)
     .post(async (req: Request, res: Response) => {
         try {
-            let json: intTaak = req.body; // {"omschrijving": "<omschrijving>", "naam": "<naam>"}
+            let json: Taak = req.body; // {"omschrijving": "<omschrijving>", "naam": "<naam>"}
             const omschrijving: any = json.omschrijving
             const naam: any = json.naam;
             const preparedStatement: string = `INSERT INTO ${table}(omschrijving, naam) VALUES(?, ?)`;
@@ -82,7 +82,7 @@ router.route("/tasks")
     // GET localhost:3000/tasks (alle taken opvragen)
     .get(async (req: Request, res: Response) => {
         try {
-            let json: intTaak[] = [];
+            let json: Taak[] = [];
             const query: string = "SELECT * FROM " + table;
             const conn: Connection = await mysql.createConnection(access);
             const [result] = await conn.query(query);
