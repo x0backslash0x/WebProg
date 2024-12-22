@@ -8,9 +8,6 @@
  * deze oefening bouwt verder op taken server (1002)
 **/
 
-TODO24121903 get tasks aanpassen
-beschrijving taken moeten aflopend gesorteerd worden
-
 TODO24121905 delete task aanpassen
 beschrijving numering taken bijwerken na verwijderen (zodat deze aansluiten)
 
@@ -32,3 +29,6 @@ beschrijving enkel taak met prioriteit 1 ophalen
 TODO24122101 mysql tabel uitbreiden
 beschrijving taken kolom toevoegen
 extra        'alter table taken add column prioriteit smallint not null;'
+
+TODO24121903 get tasks aanpassen
+beschrijving taken moeten aflopend gesorteerd worden
