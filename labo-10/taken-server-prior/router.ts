@@ -63,6 +63,31 @@ router.route("/task")
         }
     })
 
+    //POST localhost:3000/task-urgent:<json> (een nieuwe taak toevoegen met prioriteit 1)
+    .post(async (req: Request, res: Response) => {
+        try {
+            /* // prioriteit van huidige taken verlagen met 1
+            let taken: Taak[] = [];
+            const query: string = "SELECT * FROM " + table;
+            const conn: Connection = await mysql.createConnection(access);
+            const [result1] = await conn.query(query); */
+
+            let taak: Taak = req.body; // {"omschrijving": "<omschrijving>", "naam": "<naam>", "prioriteit": <prioriteit>}
+            const omschrijving: any = taak.omschrijving
+            const naam: any = taak.naam;
+            const prioriteit: number = 1;
+            const preparedStatement: string = `INSERT INTO ${table}(omschrijving, naam, prioriteit) VALUES(?, ?, ?)`;
+
+            const [result2] = await conn.query(preparedStatement, [omschrijving, naam, prioriteit]);
+            res.status(200).send("Data is aangekomen");
+            console.log(preparedStatement);
+        } catch (error) {
+            res.sendStatus(500);
+            console.log(error);
+        }
+    })
+
+
     // DELETE localhost:3000/task?omschrijving=<omschrijving>&naam=<naam> (een taak verwijderen)
     .delete(async (req: Request, res: Response) => {
         try {
