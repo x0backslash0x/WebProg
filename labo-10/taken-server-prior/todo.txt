@@ -23,6 +23,9 @@ beschrijving numering taken bijwerken na verwijderen (zodat deze aansluiten)
 TODO24121906 post task-urgent implementeren
 beschrijving een taak met prioriteit 1 invoegen en andere prioriteiten 1 opschuiven
 
+TODO24122201 post task aanpassen
+beschrijving prioriteit moet nu ook meegegeven worden
+
 
 VOLTOOID
 --------
