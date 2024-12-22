@@ -11,8 +11,11 @@
 TODO24121905 delete task aanpassen
 beschrijving numering taken bijwerken na verwijderen (zodat deze aansluiten)
 
-TODO24121906 post task-urgent implementeren
-beschrijving een taak met prioriteit 1 invoegen en andere prioriteiten 1 opschuiven
+TODO24121906 post task-urgent implementeren deel1
+beschrijving andere prioriteiten 1 opschuiven
+
+TODO24122102 post task-urgent implementeren deel2
+beschrijving een taak met prioriteit 1 invoegen
 
 
 VOLTOOID
