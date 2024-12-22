@@ -8,9 +8,6 @@
  * deze oefening bouwt verder op taken server (1002)
 **/
 
-TODO24121901 taak interface aanpassen
-beschrijving taken objecten hebben nu ook een prioriteit property
-
 TODO24122101 mysql tabel uitbreiden
 beschrijving taken kolom toevoegen
 
@@ -29,3 +26,5 @@ beschrijving een taak met prioriteit 1 invoegen en andere prioriteiten 1 opschui
 
 VOLTOOID
 --------
+TODO24121901 taak interface aanpassen
+beschrijving taken objecten hebben nu ook een prioriteit property

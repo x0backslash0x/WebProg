@@ -13,6 +13,7 @@ import mysql, { Connection, ConnectionOptions } from "mysql2/promise";
 import { MYSQL_PWD } from './env';
 
 interface Taak {
+    prioriteit: number;
     omschrijving: string;
     naam: string;
 }
