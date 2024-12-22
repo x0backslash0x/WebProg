@@ -8,9 +8,6 @@
  * deze oefening bouwt verder op taken server (1002)
 **/
 
-TODO24122101 mysql tabel uitbreiden
-beschrijving taken kolom toevoegen
-
 TODO24121903 get tasks aanpassen
 beschrijving taken moeten aflopend gesorteerd worden
 
@@ -31,3 +28,7 @@ beschrijving prioriteit moet nu ook meegegeven worden
 
 TODO24121904 get task aanpassen
 beschrijving enkel taak met prioriteit 1 ophalen
+
+TODO24122101 mysql tabel uitbreiden
+beschrijving taken kolom toevoegen
+extra        'alter table taken add column prioriteit smallint not null;'
