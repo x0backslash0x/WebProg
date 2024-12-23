@@ -9,14 +9,9 @@
 **/
 
 import express, { Router, Request, Response } from 'express';
-import mysql, { Connection, ConnectionOptions } from "mysql2/promise";
+import mysql, { Connection, ConnectionOptions, RowDataPacket } from "mysql2/promise";
 import { MYSQL_PWD } from './env';
-
-interface Taak {
-    prioriteit: number;
-    omschrijving: string;
-    naam: string;
-}
+import { Taak } from "./taak";
 
 const access: ConnectionOptions = {
     host: "localhost",
@@ -63,30 +58,6 @@ router.route("/task")
         }
     })
 
-    //POST localhost:3000/task-urgent:<json> (een nieuwe taak toevoegen met prioriteit 1)
-    .post(async (req: Request, res: Response) => {
-        try {
-            /* // prioriteit van huidige taken verlagen met 1
-            let taken: Taak[] = [];
-            const query: string = "SELECT * FROM " + table;
-            const conn: Connection = await mysql.createConnection(access);
-            const [result1] = await conn.query(query); */
-
-            let taak: Taak = req.body; // {"omschrijving": "<omschrijving>", "naam": "<naam>", "prioriteit": <prioriteit>}
-            const omschrijving: any = taak.omschrijving
-            const naam: any = taak.naam;
-            const prioriteit: number = 1;
-            const preparedStatement: string = `INSERT INTO ${table}(omschrijving, naam, prioriteit) VALUES(?, ?, ?)`;
-
-            const [result2] = await conn.query(preparedStatement, [omschrijving, naam, prioriteit]);
-            res.status(200).send("Data is aangekomen");
-            console.log(preparedStatement);
-        } catch (error) {
-            res.sendStatus(500);
-            console.log(error);
-        }
-    })
-
 
     // DELETE localhost:3000/task?omschrijving=<omschrijving>&naam=<naam> (een taak verwijderen)
     .delete(async (req: Request, res: Response) => {
@@ -119,3 +90,25 @@ router.route("/tasks")
             console.log(error);
         }
     });
+
+router.route("/task-urgent")
+    //POST localhost:3000/task-urgent:<json> (een nieuwe taak toevoegen met prioriteit 1)
+    .post(async (req: Request, res: Response) => {
+        try {
+            // prioriteit van huidige taken verlagen met 1
+            let taken: Taak[] = [];
+            const query_select: string = "SELECT * FROM " + table;
+            const conn: Connection = await mysql.createConnection(access);
+            const [result1] = await conn.query(query_select);
+            const prioriteiten = (result1 as RowDataPacket);
+            for (let index in prioriteiten) {
+                let prioriteit: number = prioriteiten[index].prioriteit;
+                let naam: string = prioriteiten[index].naam;
+                await conn.query(`UPDATE ${table} SET prioriteit = ${prioriteit+1} WHERE naam = "${naam}"`);
+            }
+            res.sendStatus(200);
+        } catch (error) {
+            res.sendStatus(500);
+            console.log(error);
+        }
+    })
