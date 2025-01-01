@@ -95,17 +95,22 @@ router.route("/task-urgent")
     //POST localhost:3000/task-urgent:<json> (een nieuwe taak toevoegen met prioriteit 1)
     .post(async (req: Request, res: Response) => {
         try {
-            // prioriteit van huidige taken verlagen met 1
-            let taken: Taak[] = [];
-            const query_select: string = "SELECT * FROM " + table;
+            // prioriteit van andere taken opschuiven (+1) 
             const conn: Connection = await mysql.createConnection(access);
-            const [result1] = await conn.query(query_select);
+            const [result1] = await conn.query("SELECT * FROM " + table);
             const prioriteiten = (result1 as RowDataPacket);
             for (let index in prioriteiten) {
                 let prioriteit: number = prioriteiten[index].prioriteit;
                 let naam: string = prioriteiten[index].naam;
                 await conn.query(`UPDATE ${table} SET prioriteit = ${prioriteit+1} WHERE naam = "${naam}"`);
             }
+
+            // taak met prioriteit 1 toevoegen {"omschrijving": "<omschrijving>", "naam": "<naam>"}
+            let taak: Taak = new Taak(1, req.body.omschrijving, req.body.naam);
+            const preparedStatement: string = `INSERT INTO ${table}(prioriteit, omschrijving, naam) VALUES(?, ?, ?)`;
+            const [result] = await conn.query(preparedStatement, [taak.prioriteit, taak.omschrijving, taak.naam]);
+
+            // transactie afronden
             res.sendStatus(200);
         } catch (error) {
             res.sendStatus(500);
