@@ -17,18 +17,15 @@ import * as readline from "readline-sync";
 
 let aantal = readline.questionInt("Hoeveel getallen wil je optellen? ")
 let getallen: number[] = [];
-let getal: number;
-let index: number = 0;
 
-do {
-    index++;
-    getal = readline.questionInt(`Geef getal ${index} in `);
+for (let index: number = 0; index < aantal; index++) {
+    let getal: number = readline.questionInt(`Geef getal ${index} in `);
     getallen.push(getal);
-} while(index < aantal)
+}
 
 let som: number = 0;
-for(let i: number = 0; i < getallen.length; i++) {
-    som += getallen[i];;
+for(let getal of getallen) {
+    som += getal;
 }
 
 console.log(`De som van de getallen is ${som}`);
